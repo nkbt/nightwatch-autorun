@@ -35,5 +35,10 @@
   "bugs": {
     "url": "https://github.com/nkbt/nightwatch-autorun/issues"
   },
-  "homepage": "https://github.com/nkbt/nightwatch-autorun"
+  "homepage": "https://github.com/nkbt/nightwatch-autorun",
+  "dependencies": {
+    "selenium-standalone": "^4.7.1",
+    "webpack": "^1.12.3",
+    "webpack-dev-server": "^1.12.1"
+  }
 }
