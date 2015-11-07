@@ -4,6 +4,7 @@ var selenium = require('selenium-standalone');
 var cp = require('child_process');
 var path = require('path');
 var fs = require('fs');
+var mkdirp = require('mkdirp');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var webpackConfig = require(process.env.WEBPACK_CONFIG ?
@@ -14,6 +15,9 @@ var reportDir = process.env.REPORT_DIR ?
   path.resolve(process.env.REPORT_DIR) : path.resolve(process.cwd(), 'reports', 'test-e2e');
 var nightwatchConfig = process.env.NIGHTWATCH_CONFIG ?
   path.resolve(process.env.NIGHTWATCH_CONFIG) : path.resolve(process.cwd(), 'nightwatch.json');
+
+
+mkdirp.sync(reportDir);
 
 
 try {
