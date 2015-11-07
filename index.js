@@ -31,8 +31,8 @@ try {
 
 
 var seleniumLog = fs.createWriteStream(path.resolve(logDir, 'selenium.log'));
-var nightwatchRunner = path
-  .resolve(process.cwd(), 'node_modules', '.bin', 'nightwatch');
+var which = require('npm-which')(__dirname);
+var nightwatchRunner = which.sync('nightwatch');
 
 
 function startServer(cb) {
