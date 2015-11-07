@@ -20,7 +20,5 @@ Automatically installs Selenium (if necessary) and runs End-to-End tests with Ni
 
     Required by Selenium
 
-2. nightwatch.json configuration
-
-3. webpack.config.js to run dev server
+2. webpack.config.js to run dev server
 
