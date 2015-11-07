@@ -8,7 +8,8 @@
     "nw-autorun": "index.js"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "postversion": "git push --follow-tags"
   },
   "engines": {
     "node": ">=0.10"
