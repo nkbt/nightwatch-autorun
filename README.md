@@ -1,5 +1,12 @@
 # nightwatch-autorun
 
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nkbt/help)
+
+[![Circle CI](https://circleci.com/gh/nkbt/nightwatch-autorun.svg?style=svg)](https://circleci.com/gh/nkbt/nightwatch-autorun)
+[![Dependency Status](https://david-dm.org/nkbt/nightwatch-autorun.svg)](https://david-dm.org/nkbt/nightwatch-autorun)
+[![devDependency Status](https://david-dm.org/nkbt/nightwatch-autorun/dev-status.svg)](https://david-dm.org/nkbt/nightwatch-autorun#info=devDependencies)
+
 Automatically installs Selenium (if necessary) and runs End-to-End tests with Nightwatch.
 
 

@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "test": "cd test && REPORT_DIR=../reports LOG_DIR=../reports node ../index.js && cd .. || cd ..",
     "postversion": "git push --follow-tags"
   },
   "engines": {
@@ -42,6 +43,11 @@
     "nightwatch": "^0.8.8",
     "npm-which": "^2.0.0",
     "selenium-standalone": "^4.7.2",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^1.7.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   }
