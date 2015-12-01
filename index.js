@@ -23,8 +23,6 @@ mkdirp.sync(reportDir);
 try {
   require(nightwatchConfig);
 } catch (err) {
-  console.error(err);
-  console.log(err.stack);
   console.log('Fallback to default nightwatch.json config');
   nightwatchConfig = path.resolve(__dirname, 'nightwatch.json');
 }
