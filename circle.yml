@@ -1,0 +1,12 @@
+machine:
+  node:
+    version: v0.10.40
+
+
+dependencies:
+  pre:
+    - npm install -g npm@3
+
+test:
+  override:
+    - cd test && REPORT_DIR=${CIRCLE_TEST_REPORTS} LOG_DIR=${CIRCLE_ARTIFACTS} node ../index.js
