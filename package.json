@@ -40,7 +40,7 @@
   "homepage": "https://github.com/nkbt/nightwatch-autorun",
   "dependencies": {
     "mkdirp": "^0.5.1",
-    "nightwatch": "0.8.10",
+    "nightwatch": "0.8.11",
     "npm-which": "^2.0.0",
     "selenium-standalone": "4.7.2",
     "webpack": "^1.12.9",
