@@ -49,7 +49,7 @@ function onServerStarted(seleniumChild) {
     if (err) {
       console.error(err);
       console.log(err.stack);
-      throw err;
+      process.exit(1);
     }
 
     cp.fork(nightwatchRunner,
@@ -60,7 +60,7 @@ function onServerStarted(seleniumChild) {
       .on('error', err2 => {
         console.error(err2);
         console.log(err2.stack);
-        throw err2;
+        process.exit(1);
       })
       .on('close', code => {
         seleniumChild.kill('SIGINT');
@@ -74,7 +74,7 @@ function onSeleniumStarted(err, seleniumChild) {
   if (err) {
     console.error(err);
     console.log(err.stack);
-    throw err;
+    process.exit(1);
   }
   seleniumChild.stdout.pipe(seleniumLog);
   seleniumChild.stderr.pipe(seleniumLog);
@@ -83,7 +83,7 @@ function onSeleniumStarted(err, seleniumChild) {
     console.error(err2);
     console.log(err2.stack);
     seleniumChild.kill('SIGINT');
-    throw err2;
+    process.exit(1);
   });
 
   startServer(onServerStarted(seleniumChild));
@@ -94,7 +94,7 @@ function onSeleniumInstalled(err) {
   if (err) {
     console.error(err);
     console.log(err.stack);
-    throw err;
+    process.exit(1);
   }
 
   selenium.start({seleniumArgs: ['-debug']}, onSeleniumStarted);
