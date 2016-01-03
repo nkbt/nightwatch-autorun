@@ -1,19 +1,23 @@
 #!/usr/bin/env node
 
-var selenium = require('selenium-standalone');
-var cp = require('child_process');
-var path = require('path');
-var fs = require('fs');
-var mkdirp = require('mkdirp');
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var webpackConfig = require(process.env.WEBPACK_CONFIG ?
+
+'use strict';
+
+
+const selenium = require('selenium-standalone');
+const cp = require('child_process');
+const path = require('path');
+const fs = require('fs');
+const mkdirp = require('mkdirp');
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+const webpackConfig = require(process.env.WEBPACK_CONFIG ?
   path.resolve(process.env.WEBPACK_CONFIG) : path.resolve(process.cwd(), 'webpack.config.js'));
-var logDir = process.env.LOG_DIR ?
+const logDir = process.env.LOG_DIR ?
   path.resolve(process.env.LOG_DIR) : path.resolve(process.cwd(), 'reports');
-var reportDir = process.env.REPORT_DIR ?
+const reportDir = process.env.REPORT_DIR ?
   path.resolve(process.env.REPORT_DIR) : path.resolve(process.cwd(), 'reports', 'test-e2e');
-var nightwatchConfig = process.env.NIGHTWATCH_CONFIG ?
+let nightwatchConfig = process.env.NIGHTWATCH_CONFIG ?
   path.resolve(process.env.NIGHTWATCH_CONFIG) : path.resolve(process.cwd(), 'nightwatch.json');
 
 
@@ -28,20 +32,20 @@ try {
 }
 
 
-var seleniumLog = fs.createWriteStream(path.resolve(logDir, 'selenium.log'));
-var which = require('npm-which')(__dirname);
-var nightwatchRunner = which.sync('nightwatch');
+const seleniumLog = fs.createWriteStream(path.resolve(logDir, 'selenium.log'));
+const which = require('npm-which')(__dirname);
+const nightwatchRunner = which.sync('nightwatch');
 
 
 function startServer(cb) {
-  var server = new WebpackDevServer(webpack(webpackConfig), {quiet: true});
+  const server = new WebpackDevServer(webpack(webpackConfig), {quiet: true});
 
   server.listen(process.env.PORT || 8080, '0.0.0.0', cb);
 }
 
 
 function onServerStarted(seleniumChild) {
-  return function (err) {
+  return err => {
     if (err) {
       console.error(err);
       console.log(err.stack);
@@ -53,12 +57,12 @@ function onServerStarted(seleniumChild) {
         '--config', nightwatchConfig,
         '--output', reportDir
       ])
-      .on('error', function (err2) {
+      .on('error', err2 => {
         console.error(err2);
         console.log(err2.stack);
         throw err2;
       })
-      .on('close', function (code) {
+      .on('close', code => {
         seleniumChild.kill('SIGINT');
         process.exit(code);
       });
@@ -75,7 +79,7 @@ function onSeleniumStarted(err, seleniumChild) {
   seleniumChild.stdout.pipe(seleniumLog);
   seleniumChild.stderr.pipe(seleniumLog);
 
-  process.on('uncaughtException', function (err2) {
+  process.on('uncaughtException', err2 => {
     console.error(err2);
     console.log(err2.stack);
     seleniumChild.kill('SIGINT');

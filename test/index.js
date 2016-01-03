@@ -1,10 +1,10 @@
-var app = document.createElement('div');
+const app = document.createElement('div');
 
 app.id = 'app';
 document.body.appendChild(app);
 
 
-var header = document.createElement('h1');
+const header = document.createElement('h1');
 header.innerHTML = 'Hello, World!';
 
 

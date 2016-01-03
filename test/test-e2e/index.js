@@ -1,7 +1,7 @@
 const WAIT = 1000;
 
 module.exports = {
-  'Smoketest': function (browser) {
+  'Smoketest'(browser) {
     browser
       .url('http://localhost:8080/')
       .waitForElementVisible('body', WAIT)
