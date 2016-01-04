@@ -47,8 +47,7 @@ function startServer(cb) {
 function onServerStarted(seleniumChild) {
   return err => {
     if (err) {
-      console.error(err);
-      console.log(err.stack);
+      console.error(err.stack);
       process.exit(1);
     }
 
@@ -58,8 +57,7 @@ function onServerStarted(seleniumChild) {
         '--output', reportDir
       ])
       .on('error', err2 => {
-        console.error(err2);
-        console.log(err2.stack);
+        console.error(err2.stack);
         process.exit(1);
       })
       .on('close', code => {
@@ -72,16 +70,14 @@ function onServerStarted(seleniumChild) {
 
 function onSeleniumStarted(err, seleniumChild) {
   if (err) {
-    console.error(err);
-    console.log(err.stack);
+    console.error(err.stack);
     process.exit(1);
   }
   seleniumChild.stdout.pipe(seleniumLog);
   seleniumChild.stderr.pipe(seleniumLog);
 
   process.on('uncaughtException', err2 => {
-    console.error(err2);
-    console.log(err2.stack);
+    console.error(err2.stack);
     seleniumChild.kill('SIGINT');
     process.exit(1);
   });
@@ -92,8 +88,7 @@ function onSeleniumStarted(err, seleniumChild) {
 
 function onSeleniumInstalled(err) {
   if (err) {
-    console.error(err);
-    console.log(err.stack);
+    console.error(err.stack);
     process.exit(1);
   }
 
