@@ -6,6 +6,7 @@ const cp = require('child_process');
 const path = require('path');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
+const util = require('util');
 
 
 const createWebpackServer = config => {
@@ -19,7 +20,7 @@ const createWebpackServer = config => {
 
 const getConfig = options => {
   let nightwatchConfig = process.env.NIGHTWATCH_CONFIG ?
-    path.resolve(process.env.NIGHTWATCH_CONFIG) : path.resolve(process.cwd(), 'nightwatch.json')
+    path.resolve(process.env.NIGHTWATCH_CONFIG) : path.resolve(process.cwd(), 'nightwatch.json');
 
   try {
     require(nightwatchConfig);
@@ -39,6 +40,8 @@ const getConfig = options => {
     port: process.env.NODE_PORT || process.env.PORT || 8080
   }, options);
 
+  console.log(`Running with config:\n${util.inspect(config, {depth: 0, colors: true})}`);
+
   return Object.assign({}, config, {
     server: config.server || createWebpackServer(config)
   });
@@ -49,7 +52,7 @@ module.exports = options => {
   const config = getConfig(options);
 
   const startServer = callback =>
-    config.server.listen(process.env.PORT || 8080, '0.0.0.0', callback);
+    config.server.listen(config.port, '0.0.0.0', callback);
 
 
   const onServerStarted = seleniumChild => err => {
