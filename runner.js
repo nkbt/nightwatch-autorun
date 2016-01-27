@@ -36,7 +36,7 @@ const getConfig = options => {
     nightwatchConfig,
     webpackConfig: process.env.WEBPACK_CONFIG ?
       path.resolve(process.env.WEBPACK_CONFIG) : path.resolve(process.cwd(), 'webpack.config.js'),
-    port: process.env.PORT || 8080
+    port: process.env.NODE_PORT || process.env.PORT || 8080
   }, options);
 
   return Object.assign({}, config, {
