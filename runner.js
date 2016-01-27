@@ -84,6 +84,9 @@ module.exports = options => {
       console.error(err.stack);
       process.exit(1);
     }
+
+    mkdirp.sync(config.logDir);
+
     const seleniumLog = fs.createWriteStream(path.resolve(config.logDir, 'selenium.log'));
 
     seleniumChild.stdout.pipe(seleniumLog);
