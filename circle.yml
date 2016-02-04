@@ -2,10 +2,10 @@ machine:
   node:
     version: v5
 
-dependencies:
-  pre:
-    - sudo apt-get update
-    - sudo apt-get install --only-upgrade google-chrome-stable
+#dependencies:
+#  pre:
+#    - sudo apt-get update
+#    - sudo apt-get install --only-upgrade google-chrome-stable
 
 test:
   override:
