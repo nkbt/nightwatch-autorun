@@ -28,3 +28,8 @@ Automatically installs Selenium (if necessary) and runs End-to-End tests with Ni
     Required by Selenium
 
 2. webpack.config.js to run dev server
+
+
+## Updating google-chrome
+
+Selenium-standalone requires the most stable google chrome version. CircleCI

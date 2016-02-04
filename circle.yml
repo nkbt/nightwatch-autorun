@@ -2,6 +2,11 @@ machine:
   node:
     version: v5
 
+dependencies:
+  pre:
+    - sudo apt-get update
+    - sudo apt-get install --only-upgrade google-chrome-stable
+
 test:
   override:
     - cd test && REPORT_DIR=${CIRCLE_TEST_REPORTS} LOG_DIR=${CIRCLE_ARTIFACTS} node ../index.js
