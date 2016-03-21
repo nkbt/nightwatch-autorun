@@ -37,7 +37,8 @@ const getConfig = options => {
     nightwatchConfig,
     webpackConfig: process.env.WEBPACK_CONFIG ?
       path.resolve(process.env.WEBPACK_CONFIG) : path.resolve(process.cwd(), 'webpack.config.js'),
-    port: process.env.NODE_PORT || process.env.PORT || 8080
+    port: process.env.NODE_PORT || process.env.PORT || 8080,
+    tunnelIdentifier: process.env.TUNNEL_IDENTIFIER || "",
   }, options);
 
   console.log(`Running with config:\n${util.inspect(config, {depth: 0, colors: true})}`);
