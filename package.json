@@ -13,7 +13,7 @@
     "postversion": "git push --follow-tags"
   },
   "engines": {
-    "node": "^5.0.0"
+    "node": "5"
   },
   "os": [
     "darwin",
@@ -39,16 +39,16 @@
   },
   "homepage": "https://github.com/nkbt/nightwatch-autorun",
   "dependencies": {
-    "mkdirp": "^0.5.1",
-    "nightwatch": "^0.8.16",
-    "npm-which": "^2.0.0",
+    "mkdirp": "0.5.1",
+    "nightwatch": "0.8.18",
+    "npm-which": "2.0.0",
     "selenium-standalone": "4.8.0",
-    "webpack": "^1.12.10",
-    "webpack-dev-server": "^1.14.1"
+    "webpack": "1.12.10",
+    "webpack-dev-server": "1.14.1"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^2.8.1",
-    "webpack": "^1.12.13",
-    "webpack-dev-server": "^1.14.1"
+    "html-webpack-plugin": "2.14.0",
+    "webpack": "1.12.14",
+    "webpack-dev-server": "1.14.1"
   }
 }
