@@ -42,7 +42,7 @@
     "mkdirp": "^0.5.1",
     "nightwatch": "^0.8.16",
     "npm-which": "^2.0.0",
-    "selenium-standalone": "4.8.0",
+    "selenium-standalone": "5.1.0",
     "webpack": "^1.12.10",
     "webpack-dev-server": "^1.14.1"
   },
