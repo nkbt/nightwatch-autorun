@@ -10,6 +10,9 @@
   "scripts": {
     "start": "node index.js",
     "test": "cd test && REPORT_DIR=../reports LOG_DIR=../reports node ../index.js && cd .. || cd ..",
+    "lint": "eslint --cache .",
+    "precommit": "npm run lint -s",
+    "prepush": "npm run test -s",
     "postversion": "git push --follow-tags"
   },
   "engines": {
@@ -47,7 +50,10 @@
     "webpack-dev-server": "1.14.1"
   },
   "devDependencies": {
+    "eslint": "^2.4.0",
+    "eslint-config-airbnb": "^6.2.0",
     "html-webpack-plugin": "2.14.0",
+    "husky": "0.11.4",
     "webpack": "1.12.14",
     "webpack-dev-server": "1.14.1"
   }
