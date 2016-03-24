@@ -68,12 +68,13 @@ module.exports = options => {
     const which = require('npm-which')(__dirname);
     const nightwatchRunner = which.sync('nightwatch');
 
-    cp.fork(nightwatchRunner,
-      [
-        '--config', config.nightwatchConfig,
-        '--env', config.nightwatchEnv,
-        '--output', config.reportDir
-      ])
+    const args = [
+      '--config', config.nightwatchConfig,
+      '--env', config.nightwatchEnv,
+      '--output', config.reportDir
+    ].join(' ');
+
+    cp.exec(`${nightwatchRunner} ${args}`)
       .on('error', err2 => {
         console.error(err2.stack);
         process.exit(1);
