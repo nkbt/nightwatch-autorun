@@ -72,17 +72,36 @@ module.exports = options => {
       '--config', config.nightwatchConfig,
       '--env', config.nightwatchEnv,
       '--output', config.reportDir
-    ].join(' ');
+    ];
 
-    cp.exec(`${nightwatchRunner} ${args}`)
-      .on('error', err2 => {
-        console.error(err2.stack);
-        process.exit(1);
-      })
-      .on('close', code => {
-        seleniumChild.kill('SIGINT');
-        process.exit(code);
-      });
+    if (process.platform === 'win32') {
+      cp.exec(`${nightwatchRunner} ${args.join(' ')}`,
+        (error, stdout, stderr) => {
+          console.log(`${stdout}`);
+          console.log(`${stderr}`);
+          if (error !== null) {
+            console.log(`exec error: ${error}`);
+          }
+        })
+        .on('error', err2 => {
+          console.error(err2.stack);
+          process.exit(1);
+        })
+        .on('close', code => {
+          seleniumChild.kill('SIGINT');
+          process.exit(code);
+        });
+    } else {
+      cp.fork(nightwatchRunner, args)
+        .on('error', err2 => {
+          console.error(err2.stack);
+          process.exit(1);
+        })
+        .on('close', code => {
+          seleniumChild.kill('SIGINT');
+          process.exit(code);
+        });
+    }
   };
 
 
