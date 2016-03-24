@@ -6,6 +6,7 @@ environment:
   nodejs_version: '5.2.0'
 
 install:
+  - choco install googlechrome
   - ps: Install-Product node $env:nodejs_version
   - set CI=true
   - set PATH=%APPDATA%\npm;%PATH%
