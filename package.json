@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "cd test && REPORT_DIR=../reports LOG_DIR=../reports node ../index.js && cd .. || cd ..",
+    "test": "REPORT_DIR=./reports LOG_DIR=./reports node test.js",
     "lint": "eslint --cache .",
     "precommit": "npm run lint -s",
     "prepush": "npm run test -s",
