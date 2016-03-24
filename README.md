@@ -3,6 +3,7 @@
 [![Gitter](https://img.shields.io/gitter/room/nkbt/help.svg?style=flat-square)](https://gitter.im/nkbt/help)
 
 [![CircleCI](https://img.shields.io/circleci/project/nkbt/nightwatch-autorun.svg?style=flat-square&label=nix-build)](https://circleci.com/gh/nkbt/nightwatch-autorun)
+[![AppVeyor](https://img.shields.io/appveyor/ci/nkbt/nightwatch-autorun.svg?style=flat-square&label=win-build)](https://ci.appveyor.com/project/nkbt/nightwatch-autorun)
 [![Dependencies](https://img.shields.io/david/nkbt/nightwatch-autorun.svg?style=flat-square)](https://david-dm.org/nkbt/nightwatch-autorun)
 [![Dev Dependencies](https://img.shields.io/david/dev/nkbt/nightwatch-autorun.svg?style=flat-square)](https://david-dm.org/nkbt/nightwatch-autorun#info=devDependencies)
 
