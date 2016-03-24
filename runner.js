@@ -35,7 +35,7 @@ const getConfig = options => {
     reportDir: process.env.REPORT_DIR ?
       path.resolve(process.env.REPORT_DIR) : path.resolve(process.cwd(), 'reports', 'test-e2e'),
     nightwatchConfig,
-    nightwatchEnv: process.env.NIGHTWATCH_ENV || default,
+    nightwatchEnv: process.env.NIGHTWATCH_ENV || "default",
     webpackConfig: process.env.WEBPACK_CONFIG ?
       path.resolve(process.env.WEBPACK_CONFIG) : path.resolve(process.cwd(), 'webpack.config.js'),
     port: process.env.NODE_PORT || process.env.PORT || 8080,
