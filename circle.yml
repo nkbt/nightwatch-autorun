@@ -9,4 +9,5 @@ machine:
 
 test:
   override:
-    - cd test && REPORT_DIR=${CIRCLE_TEST_REPORTS} LOG_DIR=${CIRCLE_ARTIFACTS} node ../index.js
+    - $(npm bin)/eslint --debug . --format tap | $(npm bin)/tap-xunit > ${CIRCLE_TEST_REPORTS}/lint.xml && test ${PIPESTATUS[0]} -eq 0
+    - REPORT_DIR=${CIRCLE_TEST_REPORTS} LOG_DIR=${CIRCLE_ARTIFACTS} node test.js

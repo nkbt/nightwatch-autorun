@@ -1,6 +1,6 @@
 {
   "name": "nightwatch-autorun",
-  "version": "2.1.3",
+  "version": "2.3.0",
   "description": "Automatically installs Selenium (if necessary) and runs End-to-End tests with Nightwatch.",
   "main": "runner.js",
   "bin": {
@@ -9,11 +9,14 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "cd test && REPORT_DIR=../reports LOG_DIR=../reports node ../index.js && cd .. || cd ..",
+    "test": "cross-env REPORT_DIR=../reports LOG_DIR=../reports node test.js",
+    "lint": "eslint --cache .",
+    "precommit": "npm run lint -s",
+    "prepush": "npm run test -s",
     "postversion": "git push --follow-tags"
   },
   "engines": {
-    "node": "^5.0.0"
+    "node": "5"
   },
   "os": [
     "darwin",
@@ -39,16 +42,21 @@
   },
   "homepage": "https://github.com/nkbt/nightwatch-autorun",
   "dependencies": {
-    "mkdirp": "^0.5.1",
-    "nightwatch": "^0.8.16",
-    "npm-which": "^2.0.0",
+    "mkdirp": "0.5.1",
+    "nightwatch": "0.8.18",
+    "npm-which": "2.0.0",
     "selenium-standalone": "4.8.0",
-    "webpack": "^1.12.10",
-    "webpack-dev-server": "^1.14.1"
+    "webpack": "1.12.10",
+    "webpack-dev-server": "1.14.1"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^2.8.1",
-    "webpack": "^1.12.13",
-    "webpack-dev-server": "^1.14.1"
+    "cross-env": "1.0.7",
+    "eslint": "2.4.0",
+    "eslint-config-airbnb": "6.2.0",
+    "html-webpack-plugin": "2.14.0",
+    "husky": "0.11.4",
+    "tap-xunit": "1.3.1",
+    "webpack": "1.12.14",
+    "webpack-dev-server": "1.14.1"
   }
 }
