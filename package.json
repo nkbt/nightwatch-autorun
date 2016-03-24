@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "REPORT_DIR=./reports LOG_DIR=./reports node test.js",
+    "test": "cross-env REPORT_DIR=../reports LOG_DIR=../reports node test.js",
     "lint": "eslint --cache .",
     "precommit": "npm run lint -s",
     "prepush": "npm run test -s",
@@ -50,6 +50,7 @@
     "webpack-dev-server": "1.14.1"
   },
   "devDependencies": {
+    "cross-env": "1.0.7",
     "eslint": "2.4.0",
     "eslint-config-airbnb": "6.2.0",
     "html-webpack-plugin": "2.14.0",
