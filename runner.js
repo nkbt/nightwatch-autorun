@@ -35,10 +35,11 @@ const getConfig = options => {
     reportDir: process.env.REPORT_DIR ?
       path.resolve(process.env.REPORT_DIR) : path.resolve(process.cwd(), 'reports', 'test-e2e'),
     nightwatchConfig,
+    nightwatchEnv: process.env.NIGHTWATCH_ENV || "default",
     webpackConfig: process.env.WEBPACK_CONFIG ?
       path.resolve(process.env.WEBPACK_CONFIG) : path.resolve(process.cwd(), 'webpack.config.js'),
     port: process.env.NODE_PORT || process.env.PORT || 8080,
-    tunnelIdentifier: process.env.TUNNEL_IDENTIFIER || "",
+    tunnelIdentifier: process.env.TUNNEL_IDENTIFIER || undefined,
   }, options);
 
   console.log(`Running with config:\n${util.inspect(config, {depth: 0, colors: true})}`);
@@ -70,6 +71,7 @@ module.exports = options => {
     cp.fork(nightwatchRunner,
       [
         '--config', config.nightwatchConfig,
+        '--env', config.nightwatchEnv,
         '--output', config.reportDir
       ])
       .on('error', err2 => {
