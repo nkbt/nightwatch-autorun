@@ -10,3 +10,4 @@ machine:
 test:
   override:
     - cd test && REPORT_DIR=${CIRCLE_TEST_REPORTS} LOG_DIR=${CIRCLE_ARTIFACTS} node ../index.js
+    - REPORT_DIR=${CIRCLE_TEST_REPORTS} LOG_DIR=${CIRCLE_ARTIFACTS} npm run test:e2e -s
