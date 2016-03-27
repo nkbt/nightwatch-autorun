@@ -1,6 +1,6 @@
 {
   "name": "nightwatch-autorun",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Automatically installs Selenium (if necessary) and runs End-to-End tests with Nightwatch.",
   "main": "runner.js",
   "bin": {
