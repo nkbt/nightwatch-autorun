@@ -72,9 +72,9 @@ module.exports = options => {
       '--config', config.nightwatchConfig,
       '--env', config.nightwatchEnv,
       '--output', config.reportDir
-    ].join(' ');
+    ];
 
-    cp.exec(`${nightwatchRunner} ${args}`)
+    cp.spawn(nightwatchRunner, args, {stdio: 'inherit'})
       .on('error', err2 => {
         console.error(err2.stack);
         process.exit(1);
