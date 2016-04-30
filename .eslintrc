@@ -1,7 +1,9 @@
 {
   "extends": "airbnb/base",
   "rules": {
+    "strict": 0,
     "no-console": 0,
+    "global-require": 0,
     "comma-dangle": [2, "never"],
     "object-curly-spacing": [2, "never"]
   }

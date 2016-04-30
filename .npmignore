@@ -2,4 +2,5 @@
 /.*
 /reports/
 /test/
+/appveyor.yml
 /circle.yml
