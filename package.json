@@ -54,7 +54,7 @@
     "eslint": "2.13.1",
     "eslint-config-airbnb": "9.0.1",
     "eslint-plugin-import": "1.10.0",
-    "html-webpack-plugin": "2.21.0",
+    "html-webpack-plugin": "2.21.1",
     "husky": "0.11.4",
     "tap-xunit": "1.4.0",
     "webpack": "1.13.0",
