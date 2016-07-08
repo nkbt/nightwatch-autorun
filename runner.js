@@ -9,16 +9,14 @@ const mkdirp = require('mkdirp');
 const util = require('util');
 
 
-const {
-  NIGHTWATCH_CONFIG,
-  LOG_DIR,
-  REPORT_DIR,
-  NIGHTWATCH_ENV,
-  WEBPACK_CONFIG,
-  NODE_PORT,
-  PORT,
-  TUNNEL_IDENTIFIER
-} = process.env;
+const NIGHTWATCH_CONFIG = process.env.NIGHTWATCH_CONFIG;
+const LOG_DIR = process.env.LOG_DIR;
+const REPORT_DIR = process.env.REPORT_DIR;
+const NIGHTWATCH_ENV = process.env.NIGHTWATCH_ENV;
+const WEBPACK_CONFIG = process.env.WEBPACK_CONFIG;
+const NODE_PORT = process.env.NODE_PORT;
+const PORT = process.env.PORT;
+const TUNNEL_IDENTIFIER = process.env.TUNNEL_IDENTIFIER;
 
 
 const createWebpackServer = config => {
