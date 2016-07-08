@@ -5,7 +5,8 @@
   "main": "runner.js",
   "bin": {
     "nightwatch-autorun": "index.js",
-    "nw-autorun": "index.js"
+    "nw-autorun": "index.js",
+    "nwa": "index.js"
   },
   "scripts": {
     "start": "node index.js",
@@ -16,7 +17,7 @@
     "postversion": "git push --follow-tags"
   },
   "engines": {
-    "node": "5"
+    "node": "5 || 6"
   },
   "os": [
     "darwin",
@@ -43,11 +44,11 @@
   "homepage": "https://github.com/nkbt/nightwatch-autorun",
   "dependencies": {
     "mkdirp": "^0.5",
-    "nightwatch": "^0.9.0",
-    "npm-which": "^2.0.0",
-    "selenium-standalone": "4.8.0",
-    "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.14.1"
+    "nightwatch": "^0.9",
+    "npm-which": "^2",
+    "selenium-standalone": "^5",
+    "webpack": "^1.13",
+    "webpack-dev-server": "^1.14"
   },
   "devDependencies": {
     "cross-env": "1.0.8",
@@ -57,7 +58,7 @@
     "html-webpack-plugin": "2.22.0",
     "husky": "0.11.4",
     "tap-xunit": "1.4.0",
-    "webpack": "1.13.0",
+    "webpack": "1.13.1",
     "webpack-dev-server": "1.14.1"
   }
 }

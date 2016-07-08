@@ -9,6 +9,18 @@ const mkdirp = require('mkdirp');
 const util = require('util');
 
 
+const {
+  NIGHTWATCH_CONFIG,
+  LOG_DIR,
+  REPORT_DIR,
+  NIGHTWATCH_ENV,
+  WEBPACK_CONFIG,
+  NODE_PORT,
+  PORT,
+  TUNNEL_IDENTIFIER
+} = process.env;
+
+
 const createWebpackServer = config => {
   const webpack = require('webpack');
   const WebpackDevServer = require('webpack-dev-server');
@@ -19,8 +31,8 @@ const createWebpackServer = config => {
 
 
 const getConfig = options => {
-  let nightwatchConfig = process.env.NIGHTWATCH_CONFIG ?
-    path.resolve(process.env.NIGHTWATCH_CONFIG) : path.resolve(process.cwd(), 'nightwatch.json');
+  let nightwatchConfig = NIGHTWATCH_CONFIG ?
+    path.resolve(NIGHTWATCH_CONFIG) : path.resolve(process.cwd(), 'nightwatch.json');
 
   try {
     require(nightwatchConfig);
@@ -30,16 +42,16 @@ const getConfig = options => {
   }
 
   const config = Object.assign({
-    logDir: process.env.LOG_DIR ?
-      path.resolve(process.env.LOG_DIR) : path.resolve(process.cwd(), 'reports'),
-    reportDir: process.env.REPORT_DIR ?
-      path.resolve(process.env.REPORT_DIR) : path.resolve(process.cwd(), 'reports', 'test-e2e'),
+    logDir: LOG_DIR ?
+      path.resolve(LOG_DIR) : path.resolve(process.cwd(), 'reports'),
+    reportDir: REPORT_DIR ?
+      path.resolve(REPORT_DIR) : path.resolve(process.cwd(), 'reports', 'test-e2e'),
     nightwatchConfig,
-    nightwatchEnv: process.env.NIGHTWATCH_ENV || 'default',
-    webpackConfig: process.env.WEBPACK_CONFIG ?
-      path.resolve(process.env.WEBPACK_CONFIG) : path.resolve(process.cwd(), 'webpack.config.js'),
-    port: process.env.NODE_PORT || process.env.PORT || 8080,
-    tunnelIdentifier: process.env.TUNNEL_IDENTIFIER || undefined
+    nightwatchEnv: NIGHTWATCH_ENV || 'default',
+    webpackConfig: WEBPACK_CONFIG ?
+      path.resolve(WEBPACK_CONFIG) : path.resolve(process.cwd(), 'webpack.config.js'),
+    port: NODE_PORT || PORT || 8080,
+    tunnelIdentifier: TUNNEL_IDENTIFIER || undefined
   }, options);
 
   console.log(`Running with config:\n${util.inspect(config, {depth: 0, colors: true})}`);
