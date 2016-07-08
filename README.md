@@ -1,6 +1,6 @@
 # nightwatch-autorun [![npm](https://img.shields.io/npm/v/nightwatch-autorun.svg?style=flat-square)](https://www.npmjs.com/package/nightwatch-autorun)
 
-[![Gitter](https://img.shields.io/gitter/room/nkbt/help.svg?style=flat-square)](https://gitter.im/nkbt/help)
+[![Discord](https://img.shields.io/badge/chat-discord-blue.svg?style=flat-square)](https://discord.gg/013tGW1IMcW6Vd1o7)
 
 [![CircleCI](https://img.shields.io/circleci/project/nkbt/nightwatch-autorun.svg?style=flat-square&label=nix-build)](https://circleci.com/gh/nkbt/nightwatch-autorun)
 [![AppVeyor](https://img.shields.io/appveyor/ci/nkbt/nightwatch-autorun.svg?style=flat-square&label=win-build)](https://ci.appveyor.com/project/nkbt/nightwatch-autorun)
@@ -30,7 +30,6 @@ Automatically installs Selenium (if necessary) and runs End-to-End tests with Ni
 
 2. webpack.config.js to run dev server
 
+3. Make sure you have latest Chrome installed
 
-## Updating google-chrome
-
-Selenium-standalone requires the most stable google chrome version. CircleCI
+4. When using CircleCI change project settings to use the latest Ubuntu, which includes the latest Chrome: https://circleci.com/docs/build-image-trusty/
