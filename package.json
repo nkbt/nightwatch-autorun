@@ -54,7 +54,7 @@
     "cross-env": "2.0.0",
     "eslint": "3.1.0",
     "eslint-config-airbnb": "9.0.1",
-    "eslint-plugin-import": "1.11.1",
+    "eslint-plugin-import": "1.12.0",
     "html-webpack-plugin": "2.22.0",
     "husky": "0.11.6",
     "tap-xunit": "1.4.0",
