@@ -5,6 +5,12 @@ cache:
     - node_modules
 notifications:
   email: false
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 node_js:
   - '5'
   - '4'
