@@ -45,7 +45,7 @@
   "dependencies": {
     "mkdirp": "^0.5",
     "nightwatch": "^0.9",
-    "npm-which": "^2",
+    "npm-which": "^3.0.0",
     "selenium-standalone": "^5",
     "webpack": "^1.13",
     "webpack-dev-server": "^1.14"
