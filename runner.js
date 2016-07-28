@@ -22,6 +22,7 @@ const TUNNEL_IDENTIFIER = process.env.TUNNEL_IDENTIFIER;
 const createWebpackServer = config => {
   const webpack = require('webpack');
   const WebpackDevServer = require('webpack-dev-server');
+
   const webpackConfig = require(config.webpackConfig);
 
   return new WebpackDevServer(webpack(webpackConfig), {quiet: true});
@@ -76,6 +77,7 @@ module.exports = options => {
     mkdirp.sync(config.reportDir);
 
     const which = require('npm-which')(__dirname);
+
     const nightwatchRunner = which.sync('nightwatch');
 
     const args = [
