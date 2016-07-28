@@ -17,7 +17,7 @@
     "postversion": "git push --follow-tags"
   },
   "engines": {
-    "node": ">=5"
+    "node": ">=4"
   },
   "os": [
     "darwin",
@@ -45,7 +45,7 @@
   "dependencies": {
     "mkdirp": "^0.5",
     "nightwatch": "^0.9",
-    "npm-which": "^2",
+    "npm-which": "^3",
     "selenium-standalone": "^5",
     "webpack": "^1.13",
     "webpack-dev-server": "^1.14"
@@ -53,7 +53,7 @@
   "devDependencies": {
     "cross-env": "2.0.0",
     "eslint": "3.1.1",
-    "eslint-config-airbnb": "9.0.1",
+    "eslint-config-airbnb-base": "5.0.0",
     "eslint-plugin-import": "1.12.0",
     "html-webpack-plugin": "2.22.0",
     "husky": "0.11.6",
