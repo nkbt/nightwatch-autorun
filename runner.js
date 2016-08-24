@@ -130,5 +130,15 @@ module.exports = options => {
     selenium.start({seleniumArgs: ['-debug']}, onSeleniumStarted);
   }
 
-  selenium.install({}, onSeleniumInstalled);
+  let progress;
+  selenium.install({
+    logger: message => console.log(message),
+    progressCb: (totalLength, progressLength) => {
+      const newProgress = (100 * (progressLength / totalLength));
+      if (!progress || (newProgress - progress > 5) || progress > 99) {
+        progress = newProgress;
+        console.log(`Downloading: ${progress.toFixed(2)}%`);
+      }
+    }
+  }, onSeleniumInstalled);
 };
