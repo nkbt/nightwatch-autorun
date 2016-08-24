@@ -19,6 +19,21 @@ const PORT = process.env.PORT;
 const TUNNEL_IDENTIFIER = process.env.TUNNEL_IDENTIFIER;
 
 
+const drivers = {
+  baseURL: 'https://selenium-release.storage.googleapis.com',
+  version: '2.53.1',
+  chrome: {
+    version: '2.22',
+    baseURL: 'https://chromedriver.storage.googleapis.com'
+  },
+  // TODO: remove when https://github.com/vvo/selenium-standalone/issues/199 is fixed
+  firefox: {
+    version: '0.9.0',
+    baseURL: 'https://github.com/mozilla/geckodriver/releases/download'
+  }
+};
+
+
 const createWebpackServer = config => {
   const webpack = require('webpack');
   const WebpackDevServer = require('webpack-dev-server');
@@ -127,26 +142,15 @@ module.exports = options => {
       process.exit(1);
     }
 
-    selenium.start({seleniumArgs: ['-debug']}, onSeleniumStarted);
+    selenium.start({
+      drivers,
+      seleniumArgs: ['-debug']
+    }, onSeleniumStarted);
   }
 
   let progress;
   selenium.install({
-    drivers: {
-      baseURL: 'https://selenium-release.storage.googleapis.com',
-      version: '2.53.1',
-      chrome: {
-        version: '2.22',
-        arch: process.arch,
-        baseURL: 'https://chromedriver.storage.googleapis.com'
-      },
-      // TODO: remove when https://github.com/vvo/selenium-standalone/issues/199 is fixed
-      firefox: {
-        version: '0.9.0',
-        arch: process.arch,
-        baseURL: 'https://github.com/mozilla/geckodriver/releases/download'
-      }
-    },
+    drivers,
     logger: message => console.log(message),
     progressCb: (totalLength, progressLength) => {
       const newProgress = (100 * (progressLength / totalLength));
