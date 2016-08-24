@@ -46,7 +46,7 @@
     "mkdirp": "^0.5",
     "nightwatch": "^0.9",
     "npm-which": "^3",
-    "selenium-standalone": "^5",
+    "selenium-standalone": "5.5.0",
     "webpack": "^1.13",
     "webpack-dev-server": "^1.14"
   },
@@ -60,7 +60,6 @@
     "mkdirp": "0.5.1",
     "nightwatch": "0.9.7",
     "npm-which": "3.0.1",
-    "selenium-standalone": "5.5.0",
     "tap-xunit": "1.4.0",
     "webpack": "1.13.1",
     "webpack-dev-server": "1.14.1"
