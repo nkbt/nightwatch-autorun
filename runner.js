@@ -145,6 +145,9 @@ module.exports = options => {
         arch: process.arch,
         baseURL: 'https://github.com/mozilla/geckodriver/releases/download'
       }
-    }
+    },
+    logger: message => console.log(message),
+    progressCb: (totalLength, progressLength) =>
+      console.log(`Downloading: ${(100 * (progressLength / totalLength)).toFixed(2)}%`)
   }, onSeleniumInstalled);
 };
