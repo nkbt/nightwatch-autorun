@@ -130,5 +130,21 @@ module.exports = options => {
     selenium.start({seleniumArgs: ['-debug']}, onSeleniumStarted);
   }
 
-  selenium.install({}, onSeleniumInstalled);
+  selenium.install({
+    drivers: {
+      baseURL: 'https://selenium-release.storage.googleapis.com',
+      version: '2.53.1',
+      chrome: {
+        version: '2.22',
+        arch: process.arch,
+        baseURL: 'https://chromedriver.storage.googleapis.com'
+      },
+      // TODO: remove when https://github.com/vvo/selenium-standalone/issues/199 is fixed
+      firefox: {
+        version: '0.9.0',
+        arch: process.arch,
+        baseURL: 'https://github.com/mozilla/geckodriver/releases/download'
+      }
+    }
+  }, onSeleniumInstalled);
 };
