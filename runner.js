@@ -135,7 +135,7 @@ module.exports = options => {
     logger: message => console.log(message),
     progressCb: (totalLength, progressLength) => {
       const newProgress = (100 * (progressLength / totalLength));
-      if (!progress || (newProgress - progress > 5) || progress > 99) {
+      if (!progress || (newProgress - progress > 5) || newProgress > 99) {
         progress = newProgress;
         console.log(`Downloading: ${progress.toFixed(2)}%`);
       }
