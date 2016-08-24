@@ -130,6 +130,7 @@ module.exports = options => {
     selenium.start({seleniumArgs: ['-debug']}, onSeleniumStarted);
   }
 
+  let progress;
   selenium.install({
     drivers: {
       baseURL: 'https://selenium-release.storage.googleapis.com',
@@ -147,7 +148,12 @@ module.exports = options => {
       }
     },
     logger: message => console.log(message),
-    progressCb: (totalLength, progressLength) =>
-      console.log(`Downloading: ${(100 * (progressLength / totalLength)).toFixed(2)}%`)
+    progressCb: (totalLength, progressLength) => {
+      const newProgress = (100 * (progressLength / totalLength));
+      if (!progress || (newProgress - progress > 5) || progress > 99.99) {
+        progress = newProgress;
+        console.log(`Downloading: ${progress.toFixed(2)}%`);
+      }
+    }
   }, onSeleniumInstalled);
 };
