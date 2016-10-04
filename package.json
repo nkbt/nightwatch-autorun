@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "cross-env": "3.1.1",
-    "eslint": "3.4.0",
+    "eslint": "3.6.0",
     "eslint-config-airbnb-base": "7.1.0",
     "eslint-plugin-import": "1.15.0",
     "html-webpack-plugin": "2.22.0",
