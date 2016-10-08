@@ -56,7 +56,7 @@
     "eslint-config-airbnb-base": "7.1.0",
     "eslint-plugin-import": "1.15.0",
     "html-webpack-plugin": "2.22.0",
-    "husky": "0.11.7",
+    "husky": "0.11.8",
     "mkdirp": "0.5.1",
     "nightwatch": "0.9.8",
     "npm-which": "3.0.1",
