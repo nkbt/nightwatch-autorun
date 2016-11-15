@@ -58,7 +58,7 @@
     "html-webpack-plugin": "2.24.1",
     "husky": "0.11.9",
     "mkdirp": "0.5.1",
-    "nightwatch": "0.9.8",
+    "nightwatch": "0.9.9",
     "npm-which": "3.0.1",
     "tap-xunit": "1.4.0",
     "webpack": "1.13.3",
