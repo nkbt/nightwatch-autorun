@@ -34,3 +34,13 @@ Automatically installs Selenium (if necessary) and runs End-to-End tests with Ni
 3. Make sure you have latest Chrome installed
 
 4. When using CircleCI change project settings to use the latest Ubuntu, which includes the latest Chrome: https://circleci.com/docs/build-image-trusty/
+
+5. Alternatively you may add these lines to install the latest chrome on CircleCI ( or similarly on TravisCI):
+  ```
+  dependencies:
+    pre:
+      - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+      - sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+      - sudo apt-get update
+      - sudo apt-get --only-upgrade install google-chrome-stable
+  ```
