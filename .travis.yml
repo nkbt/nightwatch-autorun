@@ -12,13 +12,13 @@ addons:
       - google-chrome
     packages:
       - google-chrome-stable
+      - oracle-java8-set-default
 node_js:
   - '6'
   - '5'
   - '4'
 
 before_install:
- - sudo apt-get install oracle-java8-set-default
  - export DISPLAY=:99.0
  - sh -e /etc/init.d/xvfb start
  - npm install -g npm@3
