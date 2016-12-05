@@ -13,6 +13,7 @@ addons:
     packages:
       - google-chrome-stable
 node_js:
+  - '6'
   - '5'
   - '4'
 

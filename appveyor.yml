@@ -3,7 +3,7 @@ branches:
   - master
 
 environment:
-  nodejs_version: '5.2.0'
+  nodejs_version: '7'
 
 install:
   - choco install googlechrome
