@@ -7,6 +7,9 @@ const path = require('path');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 const util = require('util');
+const npmWhich = require('npm-which');
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
 
 
 const NIGHTWATCH_CONFIG = process.env.NIGHTWATCH_CONFIG;
@@ -20,9 +23,6 @@ const TUNNEL_IDENTIFIER = process.env.TUNNEL_IDENTIFIER;
 
 
 const createWebpackServer = config => {
-  const webpack = require('webpack');
-  const WebpackDevServer = require('webpack-dev-server');
-
   const webpackConfig = require(config.webpackConfig);
 
   return new WebpackDevServer(webpack(webpackConfig), {quiet: true});
@@ -76,7 +76,7 @@ module.exports = options => {
 
     mkdirp.sync(config.reportDir);
 
-    const which = require('npm-which')(__dirname);
+    const which = npmWhich(__dirname);
 
     const nightwatchRunner = which.sync('nightwatch');
 
