@@ -61,7 +61,7 @@
     "nightwatch": "0.9.9",
     "npm-which": "3.0.1",
     "tap-xunit": "1.4.0",
-    "webpack": "1.14.0",
+    "webpack": "2.2.1",
     "webpack-dev-server": "1.16.2"
   }
 }
