@@ -47,8 +47,8 @@
     "nightwatch": "^0.9",
     "npm-which": "^3",
     "selenium-standalone": "^5",
-    "webpack": "^1.13",
-    "webpack-dev-server": "^1.14"
+    "webpack": "^1.14",
+    "webpack-dev-server": "^1.16"
   },
   "devDependencies": {
     "cross-env": "3.1.4",
@@ -57,11 +57,6 @@
     "eslint-plugin-import": "2.2.0",
     "html-webpack-plugin": "2.25.0",
     "husky": "0.13.2",
-    "mkdirp": "0.5.1",
-    "nightwatch": "0.9.11",
-    "npm-which": "3.0.1",
-    "tap-xunit": "1.5.0",
-    "webpack": "1.14.0",
-    "webpack-dev-server": "1.16.2"
+    "tap-xunit": "1.5.0"
   }
 }
