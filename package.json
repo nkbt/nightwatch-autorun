@@ -47,21 +47,16 @@
     "nightwatch": "^0.9",
     "npm-which": "^3",
     "selenium-standalone": "^6.0.0",
-    "webpack": "^1.13",
-    "webpack-dev-server": "^1.14"
+    "webpack": "^1.14",
+    "webpack-dev-server": "^1.16"
   },
   "devDependencies": {
-    "cross-env": "3.1.3",
-    "eslint": "3.12.0",
+    "cross-env": "3.1.4",
+    "eslint": "3.12.1",
     "eslint-config-airbnb-base": "10.0.1",
     "eslint-plugin-import": "2.2.0",
-    "html-webpack-plugin": "2.24.1",
-    "husky": "0.11.9",
-    "mkdirp": "0.5.1",
-    "nightwatch": "0.9.9",
-    "npm-which": "3.0.1",
-    "tap-xunit": "1.4.0",
-    "webpack": "1.14.0",
-    "webpack-dev-server": "1.16.2"
+    "html-webpack-plugin": "2.25.0",
+    "husky": "0.13.2",
+    "tap-xunit": "1.5.0"
   }
 }
