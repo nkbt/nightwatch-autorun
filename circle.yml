@@ -11,5 +11,5 @@ test:
     - google-chrome --version
 
   override:
-    - $(npm bin)/eslint --debug --output-file ${CIRCLE_TEST_REPORTS}/lint.xml --format junit
+    - $(npm bin)/eslint .
     - REPORT_DIR=${CIRCLE_TEST_REPORTS} LOG_DIR=${CIRCLE_ARTIFACTS} node test.js
