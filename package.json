@@ -47,7 +47,7 @@
     "nightwatch": "^0.9",
     "npm-which": "^3",
     "selenium-standalone": "^6",
-    "webpack": "^1.14",
+    "webpack": "^2.3.0",
     "webpack-dev-server": "^1.16"
   },
   "devDependencies": {
