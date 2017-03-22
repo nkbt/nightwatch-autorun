@@ -2,11 +2,11 @@
 
 [![Discord](https://img.shields.io/badge/chat-discord-blue.svg?style=flat-square)](https://discord.gg/013tGW1IMcW6Vd1o7)
 
-[![CircleCI](https://img.shields.io/circleci/project/nkbt/nightwatch-autorun.svg?style=flat-square&label=nix-build)](https://circleci.com/gh/nkbt/nightwatch-autorun)
-[![AppVeyor](https://img.shields.io/appveyor/ci/nkbt/nightwatch-autorun.svg?style=flat-square&label=win-build)](https://ci.appveyor.com/project/nkbt/nightwatch-autorun)
-[![Travis](https://img.shields.io/travis/nkbt/nightwatch-autorun.svg?style=flat-square&label=matrix-build)](https://travis-ci.org/nkbt/nightwatch-autorun)
-[![Dependencies](https://img.shields.io/david/nkbt/nightwatch-autorun.svg?style=flat-square)](https://david-dm.org/nkbt/nightwatch-autorun)
-[![Dev Dependencies](https://img.shields.io/david/dev/nkbt/nightwatch-autorun.svg?style=flat-square)](https://david-dm.org/nkbt/nightwatch-autorun#info=devDependencies)
+[![CircleCI](https://img.shields.io/circleci/project/nkbt/nightwatch-autorun/master.svg?style=flat-square&label=nix-build)](https://circleci.com/gh/nkbt/nightwatch-autorun)
+[![AppVeyor](https://img.shields.io/appveyor/ci/nkbt/nightwatch-autorun/master.svg?style=flat-square&label=win-build)](https://ci.appveyor.com/project/nkbt/nightwatch-autorun)
+[![Travis](https://img.shields.io/travis/nkbt/nightwatch-autorun/master.svg?style=flat-square&label=matrix-build)](https://travis-ci.org/nkbt/nightwatch-autorun)
+[![Dependencies](https://img.shields.io/david/nkbt/nightwatch-autorun/master.svg?style=flat-square)](https://david-dm.org/nkbt/nightwatch-autorun)
+[![Dev Dependencies](https://img.shields.io/david/dev/nkbt/nightwatch-autorun/master.svg?style=flat-square)](https://david-dm.org/nkbt/nightwatch-autorun#info=devDependencies)
 
 
 Automatically installs Selenium (if necessary) and runs End-to-End tests with Nightwatch.
