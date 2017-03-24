@@ -48,7 +48,7 @@
     "npm-which": "^3",
     "selenium-standalone": "^6",
     "webpack": "^2.3.1",
-    "webpack-dev-server": "^1.16"
+    "webpack-dev-server": "^2.4.2"
   },
   "devDependencies": {
     "cross-env": "3.2.4",
