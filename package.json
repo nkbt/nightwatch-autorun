@@ -51,7 +51,7 @@
     "webpack-dev-server": "^2.4.2"
   },
   "devDependencies": {
-    "cross-env": "3.2.4",
+    "cross-env": "4.0.0",
     "eslint": "3.18.0",
     "eslint-config-airbnb-base": "11.1.2",
     "eslint-plugin-import": "2.2.0",
