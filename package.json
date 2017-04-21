@@ -46,13 +46,13 @@
     "mkdirp": "^0.5",
     "nightwatch": "^0.9",
     "npm-which": "^3",
-    "selenium-standalone": "^6",
+    "selenium-standalone": "6.1.0",
     "webpack": "^2.3.1",
     "webpack-dev-server": "^2.4.2"
   },
   "devDependencies": {
     "cross-env": "4.0.0",
-    "eslint": "3.18.0",
+    "eslint": "3.19.0",
     "eslint-config-airbnb-base": "11.1.2",
     "eslint-plugin-import": "2.2.0",
     "html-webpack-plugin": "2.25.0",
