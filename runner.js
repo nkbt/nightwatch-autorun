@@ -127,7 +127,7 @@ module.exports = options => {
       process.exit(1);
     }
 
-    selenium.start({seleniumArgs: ['-debug']}, onSeleniumStarted);
+    selenium.start({seleniumArgs: ['-debug', 'true']}, onSeleniumStarted);
   }
 
   let progress;
