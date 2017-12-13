@@ -57,6 +57,6 @@
     "eslint-plugin-import": "2.3.0",
     "html-webpack-plugin": "2.25.0",
     "husky": "0.13.3",
-    "tap-xunit": "1.5.0"
+    "tap-xunit": "2.0.0"
   }
 }
